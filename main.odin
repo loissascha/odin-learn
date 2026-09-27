@@ -37,14 +37,7 @@ main :: proc() {
 
 	printer.print_str("calling print_str from main")
 
-	switch arch := ODIN_ARCH; arch {
-	case .i386, .wasm32, .arm32:
-		fmt.println("32 bit")
-	case .amd64, .arm64, .wasm64p32, .riscv64:
-		fmt.println("64 bit")
-	case .Unknown:
-		fmt.println("unknown architecture")
-	}
+	print_arch()
 
 	f := Foo.A
 	switch f {
@@ -71,5 +64,16 @@ main :: proc() {
 		fmt.println("o is int")
 	case bool:
 		fmt.println("o is bool")
+	}
+}
+
+print_arch :: proc() {
+	switch arch := ODIN_ARCH; arch {
+	case .i386, .wasm32, .arm32:
+		fmt.println("32 bit")
+	case .amd64, .arm64, .wasm64p32, .riscv64:
+		fmt.println("64 bit")
+	case .Unknown:
+		fmt.println("unknown architecture")
 	}
 }
