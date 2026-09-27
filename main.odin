@@ -26,6 +26,8 @@ Foonion :: union {
 main :: proc() {
 	fmt.println("Hellope!")
 
+	defer fmt.println("this is the very end!")
+
 	x := 10
 	y := 20
 	z: int // empty is 0
