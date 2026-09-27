@@ -2,6 +2,7 @@ package main
 
 import "core:fmt"
 import "printer"
+import "window"
 
 public_str := "public str"
 
@@ -75,6 +76,8 @@ main :: proc() {
 	fmt.println("swapped 1 2", swap(1, 2))
 
 	fmt.println("conditionally blue:", conditionally_blue())
+
+	window.run_app()
 }
 
 swap :: proc(x: int, y: int) -> (int, int) {
