@@ -73,10 +73,20 @@ main :: proc() {
 	}
 
 	fmt.println("swapped 1 2", swap(1, 2))
+
+	fmt.println("conditionally blue:", conditionally_blue())
 }
 
 swap :: proc(x: int, y: int) -> (int, int) {
 	return y, x
+}
+
+// default return value / default input value
+conditionally_blue :: proc(red: bool = false) -> (color := "blue") {
+	if red {
+		return "red"
+	}
+	return
 }
 
 print_arch :: proc() {
