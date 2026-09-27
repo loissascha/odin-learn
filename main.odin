@@ -1,6 +1,7 @@
 package main
 
 import "core:fmt"
+import "printer"
 
 public_str := "public str"
 
@@ -19,4 +20,6 @@ main :: proc() {
 	fmt.printf("The number x: %d and y: %d and z: %d\n", x, y, z)
 
 	fmt.printf("Len of str %d\n", len(only_int_this_file))
+
+	printer.print_str("calling print_str from main")
 }
