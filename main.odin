@@ -7,5 +7,6 @@ main :: proc() {
 
 	x := 10
 	y := 20
-	fmt.printf("The number x: %d and y: %d\n", x, y)
+	z: int // empty is 0
+	fmt.printf("The number x: %d and y: %d and z: %d\n", x, y, z)
 }
