@@ -71,6 +71,12 @@ main :: proc() {
 			break loop // breaks out of both loops
 		}
 	}
+
+	fmt.println("swapped 1 2", swap(1, 2))
+}
+
+swap :: proc(x: int, y: int) -> (int, int) {
+	return y, x
 }
 
 print_arch :: proc() {
