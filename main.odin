@@ -11,6 +11,13 @@ private_str := "private str"
 @(private = "file")
 only_int_this_file := "some str"
 
+Foo :: enum {
+	A,
+	B,
+	C,
+	D,
+}
+
 main :: proc() {
 	fmt.println("Hellope!")
 
@@ -30,5 +37,24 @@ main :: proc() {
 		fmt.println("64 bit")
 	case .Unknown:
 		fmt.println("unknown architecture")
+	}
+
+	f := Foo.A
+	switch f {
+	case .A:
+		fmt.println("A switch")
+	case .B:
+		fmt.println("B switch")
+	case .C:
+		fmt.println("C switch")
+	case .D:
+		fmt.println("D switch")
+	}
+
+	#partial switch f {
+	case .A:
+		fmt.println("A switch 2")
+	case .D:
+		fmt.println("D switch 2")
 	}
 }
