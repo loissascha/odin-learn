@@ -8,12 +8,25 @@ run_app :: proc() {
 
 	rl.SetTargetFPS(120)
 
+	counter := 0
 	for !rl.WindowShouldClose() {
 		rl.BeginDrawing()
 		defer rl.EndDrawing()
 
 		rl.ClearBackground(rl.RAYWHITE)
 
-		rl.DrawText("Hello from Odin", 20, 20, 30, rl.BLACK)
+
+		rl.DrawText(rl.TextFormat("Counter: %d", counter), 20, 20, 30, rl.BLACK)
+
+		button := rl.Rectangle {
+			x      = 30,
+			y      = 100,
+			width  = 150,
+			height = 40,
+		}
+
+		if rl.GuiButton(button, "Click me") {
+			counter += 1
+		}
 	}
 }
