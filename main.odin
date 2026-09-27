@@ -18,6 +18,11 @@ Foo :: enum {
 	D,
 }
 
+Foonion :: union {
+	int,
+	bool,
+}
+
 main :: proc() {
 	fmt.println("Hellope!")
 
@@ -56,5 +61,13 @@ main :: proc() {
 		fmt.println("A switch 2")
 	case .D:
 		fmt.println("D switch 2")
+	}
+
+	o: Foonion = 123
+	switch _ in o {
+	case int:
+		fmt.println("o is int")
+	case bool:
+		fmt.println("o is bool")
 	}
 }
