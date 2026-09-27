@@ -2,6 +2,11 @@ package main
 
 import "core:fmt"
 
+public_str := "public str"
+
+@(private)
+private_str := "private str"
+
 @(private = "file")
 only_int_this_file := "some str"
 
