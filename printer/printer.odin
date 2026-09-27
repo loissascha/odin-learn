@@ -8,5 +8,7 @@ print_str :: proc(text: string) {
 
 @(private)
 print_str2 :: proc(text: string) {
-	fmt.println(text)
+	for i := 0; i < 10; i += 1 {
+		fmt.printf("[%d]: %s\n", i, text)
+	}
 }
