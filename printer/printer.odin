@@ -9,6 +9,10 @@ print_str :: proc(text: string) {
 @(private)
 print_str2 :: proc(text: string, count: int) {
 	for i := 0; i < count; i += 1 {
-		fmt.printf("[%d]: %s\n", i, text)
+		fmt.printf("[%d]: ", i)
+		for char in text {
+			fmt.printf("%r", char)
+		}
+		fmt.printf("\n")
 	}
 }
