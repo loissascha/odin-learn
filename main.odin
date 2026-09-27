@@ -65,6 +65,12 @@ main :: proc() {
 	case bool:
 		fmt.println("o is bool")
 	}
+
+	loop: for {
+		for {
+			break loop // breaks out of both loops
+		}
+	}
 }
 
 print_arch :: proc() {
